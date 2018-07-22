@@ -1,0 +1,99 @@
+body {
+    font-family:Arial;
+    margin:0px;
+    padding:0px;
+}
+.formDiv {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    background-color: #EAEAEA;
+    margin-top: 10px;
+    padding: 5px 20px;
+}
+.formDiv> h1 {
+    width:80%;
+    text-align:center;
+    color:#B43737;
+}
+.formUl {
+
+}
+.formUl > li {
+    list-style:none;
+    margin:20px 0px;
+}
+label.mainLabel {
+    width: 200px;
+    float: left;
+    text-align: right;
+    padding: 8px 10px 0px 10px;
+    color: #B6B6B6;
+    font-size: 14px;
+}
+label.selAgree {
+    text-align: right;
+    padding: 8px 10px 0px 10px;
+    color: #B6B6B6;
+    font-size: 14px;
+}
+.formUl > li input[type=text], .formUl > li input[type=email], .formUl > li input[type=password], .country {
+    border: none;
+    padding: 8px 13px;
+    width: 250px;
+    color: #B3B3B0;
+}
+
+.formUl > li .requiredField {
+    box-shadow:inset #FF8B79 4px 0px 0px;
+}
+
+#signUp , #loginUp {
+    padding: 8px 13px;
+    border: none;
+    width: 189px;
+    height: 46px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #2DB90A;
+    margin-left: 220px;
+}
+.nodisplay {
+    display:none;
+}
+
+span.textErrorMsg {
+    color: #AE6D63;
+    font-size: 12px;
+    clear: both;
+    width: 400px;
+    margin: 0px 10px;
+    font-weight:bold;
+}
+
+#days, #months, #years {
+    border: none;
+    padding: 8px 13px;
+    width: 81px;
+    color: #B3B3B0;
+}
+
+.block {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+}
+
+#registerButton , #signButton {
+    width: 189px;
+    height: 46px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #1a19b9;
+    margin-left:auto;
+    margin-top: auto;
+}
+
