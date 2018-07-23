@@ -36,7 +36,6 @@ class UserInfo
             $stmtRegion->execute();
             $rowRegion = $stmtRegion->fetch(PDO::FETCH_ASSOC);
             $rowLogin['region'] = $rowRegion['ter_name'];
-            var_dump($rowRegion);
 
             $userCity = "SELECT ter_name FROM t_koatuu_tree WHERE ter_id = :city";
             $stmtCity = $dbh->prepare($userCity);
@@ -51,10 +50,10 @@ class UserInfo
             $stmtDistrict->execute();
             $rowDistrict = $stmtDistrict->fetch(PDO::FETCH_ASSOC);
             $rowLogin['district'] = $rowDistrict['ter_name'];
-            
+
             print "<table>\n";
             print "<tr><th>Name</th><th>Email</th><th>Region</th><th>City</th><th>District</th></tr>\n";
-            print "<tr><td>$rowLogin[login]</td><td>$rowLogin[email]</td><td>$rowLogin[region]</td><td>$rowLogin[city]</td><td>$rowLogin[district]</td><</tr>\n";
+            print "<tr><td>$rowLogin[login]</td><td>$rowLogin[email]</td><td>$rowLogin[region]</td><td>$rowLogin[city]</td><td>$rowLogin[district]</td></tr>\n";
             print "</table>";
 
         } else if ($rowEmail['email'] > 0) {
@@ -71,7 +70,7 @@ class UserInfo
             $stmtRegion->execute();
             $rowRegion = $stmtRegion->fetch(PDO::FETCH_ASSOC);
             $rowLogin['region'] = $rowRegion['ter_name'];
-            
+
 
             $userCity = "SELECT ter_name FROM t_koatuu_tree WHERE ter_id = :city";
             $stmtCity = $dbh->prepare($userCity);
@@ -79,7 +78,6 @@ class UserInfo
             $stmtCity->execute();
             $rowCity = $stmtCity->fetch(PDO::FETCH_ASSOC);
             $rowLogin['city'] = $rowCity['ter_name'];
-
 
 
             $userDistrict = "SELECT ter_name FROM t_koatuu_tree WHERE ter_id = :district";
@@ -90,11 +88,11 @@ class UserInfo
             $rowLogin['district'] = $rowDistrict['ter_name'];
 
 
-
             print "<table>\n";
             print "<tr><th>Name</th><th>Email</th><th>Region</th><th>City</th><th>District</th></tr>\n";
             print "<tr><td>$rowLogin[login]</td><td>$rowLogin[email]</td><td>$rowLogin[region]</td><td>$rowLogin[city]</td><td>$rowLogin[district]</td><</tr>\n";
             print "</table>";
+
         } else {
             //Insert user to database
             $insertUser = $dbh->prepare("INSERT INTO users (login, email, region , city , district ) VALUES (?,?,?,?,?)");
